@@ -75,8 +75,8 @@ export class ShopDetail extends React.Component {
                             source={{ uri: GOBALS.URL + this.state.shop.shop_image_name }} 
                             style={{ height: 280, justifyContent: "flex-end", }}
                         >
-                            <View style={{ height: 64, padding: 18, justifyContent: "center", backgroundColor: 'rgba(255, 255, 255, 0.3)', }}>
-                                <Text numberOfLines={1} style={[ styles.text_font, { fontSize: 20, color: '#010001', }]}>{this.state.shop.shop_name}</Text>
+                            <View style={{ height: 64, padding: 18, justifyContent: "center", backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>
+                                <Text numberOfLines={1} style={[ styles.text_font, { fontSize: 20, color: '#fff', }]}>{this.state.shop.shop_name}</Text>
                             </View>
                         </ImageBackground>
                         {this.state.shop.shop_description != '' ? 
@@ -95,14 +95,14 @@ export class ShopDetail extends React.Component {
                             {this.state.shop.shop_address != '' ? 
                             <View style={{ flexDirection: 'row', marginBottom: 4 }}>
                                 <Icon name="map-marker" size={15} style={{ color: 'red', marginTop: 2 }} />
-                                <Text style={[ styles.text_font, { color: '#e6e6e6', fontSize: 14, marginLeft: 10 }]}>{this.state.shop.shop_address}</Text>
+                                <Text style={[ styles.text_font, { color: '#ce4448', fontSize: 14, marginLeft: 10 }]}>{this.state.shop.shop_address}</Text>
                             </View>
                             : null
                             }
                             {this.state.shop.shop_tel != '' ? 
                             <View style={{ flexDirection: 'row', }}>
-                                <Icon name="cellphone-android" size={15} style={{ color: '#2899f2', marginTop: 2 }} />
-                                <Text style={[ styles.text_font, { color: '#e6e6e6', fontSize: 14, marginLeft: 10 }]}>{this.state.shop.shop_tel}</Text>
+                                <Icon name="cellphone-android" size={15} style={{ color: '#723332', marginTop: 2 }} />
+                                <Text style={[ styles.text_font, { color: '#ce4448', fontSize: 14, marginLeft: 10 }]}>{this.state.shop.shop_tel}</Text>
                             </View>
                             : null
                             }
@@ -113,7 +113,7 @@ export class ShopDetail extends React.Component {
         }
 
         return (
-            <ScrollView style={{ backgroundColor: '#010001', }}>
+            <ScrollView style={{ backgroundColor: '#ffccc8', }}>
                 <StatusBar hidden={true} />
                 {display_data}
             </ScrollView>
@@ -125,6 +125,6 @@ const styles = StyleSheet.create({
 	text_font: {
 		fontFamily: 'Kanit-Regular',
 		fontSize: 16,
-        color: '#fff',
+        color: '#ce4448',
     },
 });
