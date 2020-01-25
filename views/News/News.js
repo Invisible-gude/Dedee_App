@@ -88,8 +88,8 @@ export default class News extends React.Component {
                                 </TouchableOpacity>
                             </View>
                             <View style={{ flex: 1, flexDirection: 'column', paddingLeft: 10 }} >
-                                <Text style={[ styles.text_font, { fontSize: 18, color: '#ff9900', }]} numberOfLines={1}>{this.state.news[i].news_title}</Text>
-                                <Text style={[ styles.text_font, { fontSize: 12, color: 'gray', }]}>{this.state.news[i].news_date}</Text>
+                                <Text style={[ styles.text_font, { fontSize: 18, color: '#723332', }]} numberOfLines={1}>{this.state.news[i].news_title}</Text>
+                                <Text style={[ styles.text_font, { fontSize: 12, color: '#9a4241', }]}>{this.state.news[i].news_date}</Text>
                                 <Text style={[ styles.text_font, { fontSize: 14, } ]} numberOfLines={4}>{this.state.news[i].news_description}</Text>
                             </View>
                         </View>
@@ -99,8 +99,8 @@ export default class News extends React.Component {
         }
 
         return (
-            <Content style={{ backgroundColor: '#4A2102', }}>
-                <Header style={{ backgroundColor: '#4A2102' }}>
+            <Content style={{ backgroundColor: '#ffccc8', }}>
+                <Header style={{ backgroundColor: '#ce4448' }}>
                     <ImageBackground 
                         resizeMode='cover' 
                         source={require('../../images/bghead.png')} 
@@ -120,6 +120,6 @@ export default class News extends React.Component {
 const styles = StyleSheet.create({
 	text_font: {
         fontSize: 16,
-        color: '#fff',
+        color: '#ef6161',
     },
 });
