@@ -42,7 +42,7 @@ export class Home extends React.Component {
                     {display_data}
                 </Container>
                 <Footer>
-                    <FooterTab style={{ backgroundColor: '#4A2102', justifyContent: "center" }}>
+                    <FooterTab style={{ backgroundColor: '#ce4448', justifyContent: "center" }}>
                         <TouchableOpacity style={{ alignItems: "center", justifyContent: "center", }}
                             onPress={() => { this.setState({ page: 'News' }) }}
                         >
@@ -50,7 +50,7 @@ export class Home extends React.Component {
                             <Text style={[ styles.text_font, { color: this.state.page == 'News' ? '#ffffff' : '#fff', } ]}>News</Text>
                         </TouchableOpacity>
                     </FooterTab>
-                    <FooterTab style={{ backgroundColor: '#4A2102', justifyContent: "center" }}>
+                    <FooterTab style={{ backgroundColor: '#ce4448', justifyContent: "center" }}>
                         <TouchableOpacity style={{ alignItems: "center", justifyContent: "center", }}
                             onPress={() => { this.setState({ page: 'Shop' }) }}
                         >
@@ -58,7 +58,7 @@ export class Home extends React.Component {
                             <Text style={[ styles.text_font, { color: this.state.page == 'Shop' ? '#ffffff' : '#fff', } ]}>Shop</Text>
                         </TouchableOpacity>
                     </FooterTab>
-                    <FooterTab style={{ backgroundColor: '#4A2102', justifyContent: "center" }}>
+                    <FooterTab style={{ backgroundColor: '#ce4448', justifyContent: "center" }}>
                         <TouchableOpacity style={{ alignItems: "center", justifyContent: "center", }}
                             onPress={() => { this.setState({ page: 'Profile' }) }}
                         >
