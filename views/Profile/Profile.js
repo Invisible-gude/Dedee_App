@@ -1,13 +1,13 @@
 import React from 'react';
 import {
     Alert,
+    AsyncStorage,
     Image, 
     StyleSheet, 
     ScrollView,
     Text, 
     TouchableOpacity,
     View,
-    ImageBackground
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -36,23 +36,25 @@ export default class Profile extends React.Component {
             loading: true,
             alert: '',
         }, () => { 
-            user_model.getUserByUserCode('U0001').then((response) => {
-                if (response == false) {
-                    this.setState({
-                        loading: false,
-                        alert: 'network-failed',
-                    });
-                }else if (response.data.length == 0) {
-                    this.setState({
-                        loading: false,
-                        alert: 'not-found',
-                    });
-                }else{
-                    this.setState({ 
-                        loading: false,
-                        user_data: response.data[0], 
-                    });
-                }
+            AsyncStorage.getItem('user_data').then((user) => { return JSON.parse(user) }).then((user_data) => {
+                user_model.getUserByUserCode(user_data.user_code).then((response) => {
+                    if (response == false) {
+                        this.setState({
+                            loading: false,
+                            alert: 'network-failed',
+                        });
+                    }else if (response.data.length == 0) {
+                        this.setState({
+                            loading: false,
+                            alert: 'not-found',
+                        });
+                    }else{
+                        this.setState({ 
+                            loading: false,
+                            user_data: response.data[0], 
+                        });
+                    }
+                })
             })
         })
     }
@@ -62,7 +64,9 @@ export default class Profile extends React.Component {
     }
 
     _logOut() {
-
+        AsyncStorage.removeItem('user_data').then(() => {
+            this.props.navigation.navigate('Login')
+        });
     }
 
     render() { 
@@ -131,23 +135,17 @@ export default class Profile extends React.Component {
                                 borderRadius: 30,
                             }}
                             onPress={() => this._confirmLogout()}>
-                            <Text style={[ styles.text_font, { alignSelf: 'center', color: '#fff' }]}>
-                                ลงชื่อออก
+                            <Text style={[ styles.text_font, { alignSelf: 'center', color: '#fff', }]}>
+                                Logout
                             </Text>
                         </TouchableOpacity>
-
                     </View>
                 );
             }
         }
 
         return (
-            <ScrollView style={{ backgroundColor: '#f4c2c2', }}>
-                 <ImageBackground 
-                        resizeMode='cover' 
-                        source={require('../../images/bghead.png')} 
-                        style={{ width: '100%', justifyContent: "center", alignItems: "center" }} 
-                    ></ImageBackground>
+            <ScrollView style={{ backgroundColor: '#ffccc8', }}>
                 {display_data}
             </ScrollView>
         );
@@ -157,7 +155,7 @@ export default class Profile extends React.Component {
 const styles = StyleSheet.create({
 	text_font: {
 		fontSize: 16,
-        color: '#ef6161',
+        color: '#ce4448',
     },
     text_font_name: {
 		fontSize: 16,
@@ -170,7 +168,7 @@ const styles = StyleSheet.create({
         marginTop: 28,
         marginBottom: 28,
         alignSelf: 'center', 
-        backgroundColor: '#ef6161',
+        backgroundColor: '#ce4448',
         borderRadius: 60
     },
     profile_image: {
