@@ -135,6 +135,7 @@ export default class Profile extends React.Component {
                                 ลงชื่อออก
                             </Text>
                         </TouchableOpacity>
+                        
                     </View>
                 );
             }
