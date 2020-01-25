@@ -85,13 +85,13 @@ export default class Profile extends React.Component {
                             <Image source={require('../../images/default-user.png')} style={styles.profile_image}></Image>
                             }
                         </View>
-                        <Text style={[ styles.text_font, { alignSelf: "center", fontSize: 22, marginBottom: 16, }]}>
+                        <Text style={[ styles.text_font_name, { alignSelf: "center", fontSize: 22, marginBottom: 16, }]}>
                             {this.state.user_data.user_name + ' ' + this.state.user_data.user_lastname}
                         </Text>
                         {this.state.user_data.user_address != '' ? 
                         <View style={{ flexDirection: 'row', marginBottom: 8, }}>
                             <View style={{ flexDirection: 'column', }}>
-                                <Icon name="map-marker-outline" style={{ fontSize: 16, color: "#ff9900", marginTop: 3, }}></Icon>
+                                <Icon name="map-marker-outline" style={{ fontSize: 16, color: "#723332", marginTop: 3, }}></Icon>
                             </View>
                             <View style={{ flexDirection: 'column', }}>
                                 <Text style={[ styles.text_font, { marginLeft: 8, } ]}>{this.state.user_data.user_address}</Text>
@@ -102,7 +102,7 @@ export default class Profile extends React.Component {
                         {this.state.user_data.user_tel != '' ? 
                         <View style={{ flexDirection: 'row', marginBottom: 8, }}>
                             <View style={{ flexDirection: 'column', }}>
-                                <Icon name="phone" style={{ fontSize: 16, color: "#ff9900", marginTop: 3, }}></Icon>
+                                <Icon name="phone" style={{ fontSize: 16, color: "#723332", marginTop: 3, }}></Icon>
                             </View>
                             <View style={{ flexDirection: 'column', }}>
                                 <Text style={[ styles.text_font, { marginLeft: 8, } ]}>{this.state.user_data.user_tel}</Text>
@@ -113,7 +113,7 @@ export default class Profile extends React.Component {
                         {this.state.user_data.user_email != '' ? 
                         <View style={{ flexDirection: 'row', marginBottom: 8, }}>
                             <View style={{ flexDirection: 'column', }}>
-                                <Icon name="at" style={{ fontSize: 16, color: "#ff9900", marginTop: 3, }}></Icon>
+                                <Icon name="at" style={{ fontSize: 16, color: "#723332", marginTop: 3, }}></Icon>
                             </View>
                             <View style={{ flexDirection: 'column', }}>
                                 <Text style={[ styles.text_font, { marginLeft: 8, } ]}>{this.state.user_data.user_email}</Text>
@@ -158,6 +158,10 @@ const styles = StyleSheet.create({
 	text_font: {
 		fontSize: 16,
         color: '#ef6161',
+    },
+    text_font_name: {
+		fontSize: 16,
+        color: '#723332',
     },
     profile_frame: {
         width: 120, 
