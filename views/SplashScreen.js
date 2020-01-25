@@ -43,7 +43,7 @@ export class SplashScreen extends React.Component {
 			<View style={styles.container}>
 				<StatusBar hidden={true} />
 				<Image resizeMode="contain" source={require('../images/butterfly.png')} style={{ width: 180, height: 180, marginBottom: 50 }} />
-				<ActivityIndicator style={{ marginBottom: 8, }} size="large" color="#25aae1"/>
+				<ActivityIndicator style={{ marginBottom: 8, }} size="large" color="#723332"/>
                 <Text style={{ paddingLeft: 8, color: '#723332' }}>โหลดข้อมูล...</Text>
 			</View>
 		);
